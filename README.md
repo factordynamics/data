@@ -2,7 +2,7 @@
 
 [![CI](https://github.com/factordynamics/data/actions/workflows/ci.yml/badge.svg)](https://github.com/factordynamics/data/actions/workflows/ci.yml)
 [![Crates.io](https://img.shields.io/crates/v/data.svg)](https://crates.io/crates/data)
-[![License](https://img.shields.io/badge/License-MIT%20OR%20Apache--2.0-blue.svg)](LICENSE)
+[![License](https://img.shields.io/badge/License-MIT-blue.svg)](LICENSE-MIT)
 
 Unified data provider interface for quantitative finance.
 
@@ -56,4 +56,4 @@ just doc   # Generate documentation
 
 ## License
 
-MIT OR Apache-2.0 - see [LICENSE](LICENSE).
+MIT - see [LICENSE-MIT](LICENSE-MIT).
