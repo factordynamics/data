@@ -1,0 +1,37 @@
+[package]
+name = "data"
+description = "Unified data provider interface for quantitative finance"
+version.workspace = true
+edition.workspace = true
+rust-version.workspace = true
+license.workspace = true
+repository.workspace = true
+
+[lints]
+workspace = true
+
+[features]
+default = ["yahoo", "edgar", "cache-sqlite"]
+full = ["yahoo", "edgar", "fmp", "nasdaq", "ibkr", "cache-sqlite"]
+
+yahoo = ["data-yahoo"]
+edgar = ["data-edgar"]
+fmp = ["data-fmp"]
+nasdaq = ["data-nasdaq"]
+ibkr = ["data-ibkr"]
+cache-sqlite = ["data-cache/sqlite"]
+
+[dependencies]
+tokio.workspace = true
+chrono.workspace = true
+polars.workspace = true
+tracing.workspace = true
+data-core.workspace = true
+data-cache.workspace = true
+async-trait.workspace = true
+
+data-fmp = { workspace = true, optional = true }
+data-ibkr = { workspace = true, optional = true }
+data-yahoo = { workspace = true, optional = true }
+data-edgar = { workspace = true, optional = true }
+data-nasdaq = { workspace = true, optional = true }

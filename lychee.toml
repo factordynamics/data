@@ -1,0 +1,28 @@
+# Lychee configuration for link checking
+
+# Maximum number of concurrent link checks
+max_concurrency = 32
+
+# Timeout for each request in seconds
+timeout = 30
+
+# Request method
+method = "GET"
+
+# Accept codes (200 is the default)
+accept = [200, 204, 429]
+
+# Skip these URLs
+exclude = [
+    "https://github.com/factordynamics/data/actions/workflows/ci.yml/badge.svg",
+]
+
+# Skip files matching these patterns
+exclude_path = [
+    "target",
+    "Cargo.lock",
+]
+
+# Cache results for 12 hours
+cache = true
+max_cache_age = "12h"

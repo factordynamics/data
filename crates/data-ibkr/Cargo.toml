@@ -1,0 +1,18 @@
+[package]
+name = "data-ibkr"
+description = "Interactive Brokers data provider (stub)"
+version.workspace = true
+edition.workspace = true
+rust-version.workspace = true
+license.workspace = true
+repository.workspace = true
+
+[lints]
+workspace = true
+
+[dependencies]
+chrono.workspace = true
+polars.workspace = true
+futures.workspace = true
+data-core.workspace = true
+async-trait.workspace = true

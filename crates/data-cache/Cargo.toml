@@ -1,0 +1,28 @@
+[package]
+name = "data-cache"
+description = "Caching implementations for quant data providers"
+version.workspace = true
+edition.workspace = true
+rust-version.workspace = true
+license.workspace = true
+repository.workspace = true
+
+[lints]
+workspace = true
+
+[features]
+default = ["sqlite"]
+sqlite = ["rusqlite"]
+
+[dependencies]
+serde.workspace = true
+tokio.workspace = true
+chrono.workspace = true
+polars.workspace = true
+tracing.workspace = true
+data-core.workspace = true
+thiserror.workspace = true
+serde_json.workspace = true
+async-trait.workspace = true
+
+rusqlite = { workspace = true, optional = true }

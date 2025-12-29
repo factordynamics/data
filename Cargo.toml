@@ -1,0 +1,73 @@
+[workspace.package]
+version = "0.1.0"
+edition = "2024"
+rust-version = "1.85"
+license = "MIT OR Apache-2.0"
+homepage = "https://github.com/factordynamics/data"
+repository = "https://github.com/factordynamics/data"
+documentation = "https://docs.rs/data"
+authors = ["Factor Dynamics"]
+keywords = ["quant", "finance", "data", "market-data"]
+categories = ["finance", "science"]
+
+[workspace]
+resolver = "2"
+members = ["crates/*"]
+
+[workspace.lints.rust]
+missing-debug-implementations = "warn"
+missing-docs = "warn"
+unreachable-pub = "warn"
+unused-must-use = "deny"
+rust-2018-idioms = "deny"
+unnameable-types = "warn"
+
+[workspace.lints.rustdoc]
+all = "warn"
+
+[workspace.lints.clippy]
+all = { level = "warn", priority = -1 }
+use-self = "warn"
+redundant-clone = "warn"
+
+[profile.release]
+opt-level = 3
+lto = "thin"
+debug = "none"
+strip = "symbols"
+
+[workspace.dependencies]
+# Internal crates
+data = { version = "0.1.0", path = "crates/data" }
+data-core = { version = "0.1.0", path = "crates/data-core" }
+data-fmp = { version = "0.1.0", path = "crates/data-fmp" }
+data-ibkr = { version = "0.1.0", path = "crates/data-ibkr" }
+data-cache = { version = "0.1.0", path = "crates/data-cache" }
+data-edgar = { version = "0.1.0", path = "crates/data-edgar" }
+data-yahoo = { version = "0.1.0", path = "crates/data-yahoo" }
+data-nasdaq = { version = "0.1.0", path = "crates/data-nasdaq" }
+
+# DataFrames
+polars = { version = "0.46", default-features = false, features = ["lazy", "parquet", "dtype-date", "dtype-datetime"] }
+
+# Async runtime
+futures = "0.3"
+async-trait = "0.1"
+tokio = { version = "1", features = ["full"] }
+
+# Serialization
+serde = { version = "1", features = ["derive"] }
+serde_json = "1"
+chrono = { version = "0.4", features = ["serde"] }
+
+# HTTP client
+reqwest = { version = "0.12", features = ["json"] }
+
+# Error handling
+thiserror = "2"
+
+# Database
+rusqlite = { version = "0.32", features = ["bundled"] }
+
+# Logging
+tracing = "0.1"
